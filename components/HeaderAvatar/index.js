@@ -1,10 +1,22 @@
 import Image from 'next/image';
 import styles from './styles.module.css';
+import { useSession, signIn, signOut } from "next-auth/react";
 
-const HeaderAvatar = () => (
-  <div className={styles.avatar}>
-    <Image src="http://localhost:3000/avatar.png" alt="avatar" width={60} height={60} className={styles.img} />
-  </div>
-);
+const HeaderAvatar = () => {
+  const { data: session } = useSession();
+  return (
+    session
+      ?
+      <>
+        <Image src={session.user.image} alt="avatar" width={60} height={60} className={styles.img} />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+      :
+      <>
+        Not signed in <br />
+        <button onClick={() => signIn()}>Sign in</button>
+      </>
+  );
+};
 
 export default HeaderAvatar;

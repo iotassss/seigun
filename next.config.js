@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'], // 使用する画像のホスト名を指定します
+    domains: [
+      'localhost',
+      'lh3.googleusercontent.com', // Googleのアバター画像を表示するために追加
+    ],
   },
 }
 
