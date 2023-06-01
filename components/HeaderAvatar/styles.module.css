@@ -1,0 +1,11 @@
+.avator {
+  /* 画像の位置を指定 */
+  object-fit: cover;
+  /* 画像の位置を中央に指定 */
+  object-position: center;
+}
+
+.img {
+  /* 丸くする */
+  border-radius: 50%;
+}
