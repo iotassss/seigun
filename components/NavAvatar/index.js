@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './styles.module.css';
 import { useSession, signIn, signOut } from "next-auth/react";
 
-const HeaderAvatar = () => {
+const NavAvatar = () => {
   const { data: session } = useSession();
   return (
     session
@@ -19,4 +19,4 @@ const HeaderAvatar = () => {
   );
 };
 
-export default HeaderAvatar;
+export default NavAvatar;
