@@ -18,7 +18,10 @@ const Navigation = ({setPanel}) => {
             <button onClick={() => setPanel(0)}>Home</button>
           </li>
           <li>
-            <button onClick={() => setPanel(1)}>User</button>
+            <button onClick={() => setPanel(1)}>MessageBoard</button>
+          </li>
+          <li>
+            <button onClick={() => setPanel(2)}>User</button>
           </li>
         </ul>
       </nav>

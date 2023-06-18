@@ -5,6 +5,7 @@ import styles from '../styles/Layout.module.css'
 import Navigation from '../components/Navigation/index.js'
 import Home from '../components/Home/index.js'
 import User from '../components/User/index.js'
+import MessageBoard from '../components/MessageBoard';
 
 export default function Layout() {
   const[panel, setPanel] = useState(0);
@@ -13,6 +14,8 @@ export default function Layout() {
   if (panel === 0) {
     currentPanel = <Home />;
   } else if (panel === 1) {
+    currentPanel = <MessageBoard />;
+  } else if (panel === 2) {
     currentPanel = <User />;
   }
 
