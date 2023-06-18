@@ -3,6 +3,11 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #eaeaea;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
 }
 
 .title {
