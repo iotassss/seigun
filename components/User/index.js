@@ -1,7 +1,11 @@
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
-const User = () => {
+const User = ({ setPanel }) => {
   const { data: session } = useSession();
+
+  const handleSignOut = () => {
+    signOut({ callbackUrl: 'http://localhost:3000' });
+  };
 
   return (
     <div>
@@ -9,6 +13,7 @@ const User = () => {
       <p>
         {session ? `${session.user.name}さんこんにちは` : "こんにちは"}
       </p>
+      <button onClick={handleSignOut}>Sign out</button>
     </div>
   )
 };

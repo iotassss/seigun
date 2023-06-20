@@ -16,7 +16,7 @@ export default function Layout() {
   } else if (panel === 1) {
     currentPanel = <MessageBoard />;
   } else if (panel === 2) {
-    currentPanel = <User />;
+    currentPanel = <User setPanel={setPanel}/>;
   }
 
   return (
