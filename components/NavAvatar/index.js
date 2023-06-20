@@ -12,8 +12,8 @@ const NavAvatar = ({ setPanel }) => {
         <Image
           src={session.user.image}
           alt="avatar"
-          width={60}
-          height={60}
+          width={50}
+          height={50}
           className={styles.img}
           onClick={() => setPanel(2)}
         />
