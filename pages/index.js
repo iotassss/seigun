@@ -6,13 +6,14 @@ import Navigation from '../components/Navigation/index.js'
 import Home from '../components/Home/index.js'
 import User from '../components/User/index.js'
 import MessageBoard from '../components/MessageBoard';
+import axios from 'axios';
 
-export default function Layout() {
+export default function Layout({ articles }) {
   const[panel, setPanel] = useState(0);
 
   let currentPanel;
   if (panel === 0) {
-    currentPanel = <Home />;
+    currentPanel = <Home articles={articles}/>;
   } else if (panel === 1) {
     currentPanel = <MessageBoard />;
   } else if (panel === 2) {
@@ -43,6 +44,20 @@ export default function Layout() {
         </footer>
       </div>
     </>
+  );
+}
 
-  )
+export async function getServerSideProps() {
+  const articles = await axios.get('http://localhost/api/articles', {
+    headers: {
+      Authorization: process.env.LARAVEL_API_KEY,
+    },
+  }).then((res) => {
+    return res.data.articles;
+  }).catch((error) => {
+    console.log('Error in axios get', error);
+    throw new Error('Unable to find or create user');
+  });
+
+  return { props: { articles } };
 }

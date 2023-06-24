@@ -3,12 +3,12 @@ import Recruit from '../Recruit';
 import ImportantNotice from '../ImportantNotice';
 import News from '../News';
 
-const Home = () => {
+const Home = ({ articles }) => {
   return (
     <main className={styles.main}>
       <Recruit />
       <ImportantNotice />
-      <News />
+      <News articles={articles}/>
     </main>
   )
 }
