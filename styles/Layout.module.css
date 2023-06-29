@@ -1,7 +1,8 @@
 .container {
-  padding: 0 2rem;
+  padding: 87px 0 0;
 }
 
+/*
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -107,22 +108,37 @@
   height: 1em;
   margin-left: 0.5rem;
 }
+*/
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+@media (min-width: 480px) {
+  .container {
+    padding: 87px 2rem 0;
   }
 }
 
+@media (min-width: 767px) {
+
+}
+
+@media (min-width: 1000px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
